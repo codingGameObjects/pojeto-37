@@ -37,15 +37,16 @@ class Quiz {
     
 
     // chame getContestantInfo () aqui
-    contestant.getContestantInfo()
+    Contestant.getPlayerInfo();
   //escreva a condição para verificar se contestantInfor não é indefinido
     if (allContestants !== undefined) {
       
       //escreva aqui o código para adicionar uma nota
+      var display_Answers = 230;
+
       fill("Blue");
       textSize(20);
-      TextTrack("Jogador que respondeu a resposta correta é destacado na cor verde", 130, 230);
-    
+      text("Jogador que respondeu a resposta correta é destacado na cor verde", 130, 230);
     
 
     // escreva o código para destacar o competidor que respondeu corretamente
@@ -53,12 +54,13 @@ class Quiz {
         var correctAns = "2";
         if (correctAns == allContestants[plr].answer)
           fill("Green");
-
+          
         else
           fill("Red");
-
+        
+        display_Answers+=30;
         textSize(12);
-        text(allContestants[plr].name + ": " + allContestants[plr].answer, 150, 230);
+        text(allContestants[plr].name + ": " + allContestants[plr].answer, 150, display_Answers);
       }
     }
   }
